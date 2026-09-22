@@ -1,161 +1,169 @@
 <!DOCTYPE html>
+
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторна робота №2 — JavaScript</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px;
-            background: #f2f2f2;
-            color: #222;
-        }
 
-        h1 {
-            text-align: center;
-        }
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+        background: #f2f2f2;
+        color: #222;
+    }
 
-        h2 {
-            margin-top: 35px;
-        }
+    h1 {
+        text-align: center;
+    }
 
-        .task {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+    h2 {
+        margin-top: 35px;
+    }
 
-        button {
-            padding: 10px 18px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 6px;
-            background: #333;
-            color: white;
-            cursor: pointer;
-        }
+    .task {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        button:hover {
-            background: #555;
-        }
+    button {
+        padding: 10px 18px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 6px;
+        background: #333;
+        color: white;
+        cursor: pointer;
+    }
 
-        #output {
-            margin-top: 30px;
-            background: #111;
-            color: #00ff88;
-            padding: 20px;
-            border-radius: 10px;
-            min-height: 100px;
-            white-space: pre-line;
-        }
-    </style>
+    button:hover {
+        background: #555;
+    }
+
+    #output {
+        margin-top: 30px;
+        background: #111;
+        color: #00ff88;
+        padding: 20px;
+        border-radius: 10px;
+        min-height: 100px;
+        white-space: pre-line;
+    }
+</style>
+```
+
 </head>
 
 <body>
 
-    <h1>Лабораторна робота №2</h1>
+```
+<h1>Лабораторна робота №2</h1>
 
-    <p><strong>Тема:</strong> Змінні та оператори в JavaScript</p>
+<p><strong>Тема:</strong> Змінні та оператори в JavaScript</p>
 
+<p>
+    <strong>Мета:</strong> ознайомитися з поняттям змінної у JavaScript,
+    засвоїти принципи області видимості змінних і поняття hoisting,
+    навчитися використовувати вбудовані функції.
+</p>
+
+<h2>Рівень 4–6 балів</h2>
+
+<div class="task">
+    <h3>Завдання 1</h3>
     <p>
-        <strong>Мета:</strong> ознайомитися з поняттям змінної у JavaScript,
-        засвоїти принципи області видимості змінних і поняття hoisting,
-        навчитися використовувати вбудовані функції.
+        Створити змінну userName через prompt та вивести у alert
+        повідомлення «Hello, [userName]! Welcome to JavaScript».
     </p>
+    <button id="task1Button">Виконати</button>
+</div>
 
-    <h2>Рівень 4–6 балів</h2>
+<div class="task">
+    <h3>Завдання 2</h3>
+    <p>
+        Запитати в користувача його вік та визначити рік народження.
+    </p>
+    <button id="task2Button">Виконати</button>
+</div>
 
-    <div class="task">
-        <h3>Завдання 1</h3>
-        <p>
-            Створити змінну userName через prompt та вивести у alert
-            повідомлення «Hello, [userName]! Welcome to JavaScript».
-        </p>
-        <button onclick="task1()">Виконати</button>
-    </div>
+<div class="task">
+    <h3>Завдання 3</h3>
+    <p>
+        Ввести ім'я та прізвище і вивести повне ім'я через оператор +
+        та шаблонний рядок.
+    </p>
+    <button id="task3Button">Виконати</button>
+</div>
 
-    <div class="task">
-        <h3>Завдання 2</h3>
-        <p>
-            Запитати в користувача його вік та визначити рік народження.
-        </p>
-        <button onclick="task2()">Виконати</button>
-    </div>
+<h2>Рівень 7–9 балів</h2>
 
-    <div class="task">
-        <h3>Завдання 3</h3>
-        <p>
-            Ввести ім'я та прізвище і вивести повне ім'я через оператор +
-            та шаблонний рядок.
-        </p>
-        <button onclick="task3()">Виконати</button>
-    </div>
+<div class="task">
+    <h3>Завдання 1</h3>
+    <p>
+        Продемонструвати область видимості змінної userName
+        всередині блоку if.
+    </p>
+    <button id="task4Button">Виконати</button>
+</div>
 
-    <h2>Рівень 7–9 балів</h2>
+<div class="task">
+    <h3>Завдання 2</h3>
+    <p>
+        Запитати ім'я та вік користувача і підтвердити продовження
+        за допомогою confirm.
+    </p>
+    <button id="task5Button">Виконати</button>
+</div>
 
-    <div class="task">
-        <h3>Завдання 1</h3>
-        <p>
-            Продемонструвати область видимості змінної userName
-            всередині блоку if.
-        </p>
-        <button onclick="task4()">Виконати</button>
-    </div>
+<div class="task">
+    <h3>Завдання 3</h3>
+    <p>
+        Перевірити, чи введене число є парним.
+    </p>
+    <button id="task6Button">Виконати</button>
+</div>
 
-    <div class="task">
-        <h3>Завдання 2</h3>
-        <p>
-            Запитати ім'я та вік користувача і підтвердити продовження
-            за допомогою confirm.
-        </p>
-        <button onclick="task5()">Виконати</button>
-    </div>
+<h2>Рівень 10–12 балів</h2>
 
-    <div class="task">
-        <h3>Завдання 3</h3>
-        <p>
-            Перевірити, чи введене число є парним.
-        </p>
-        <button onclick="task6()">Виконати</button>
-    </div>
+<div class="task">
+    <h3>Завдання 1</h3>
+    <p>
+        Продемонструвати блочну область видимості змінної result
+        у функції calculate().
+    </p>
+    <button id="task7Button">Виконати</button>
+</div>
 
-    <h2>Рівень 10–12 балів</h2>
+<div class="task">
+    <h3>Завдання 2</h3>
+    <p>
+        Вгадати секретне число, яке визначається як залишок від
+        ділення номера у журналі на 10.
+    </p>
+    <button id="task8Button">Виконати</button>
+</div>
 
-    <div class="task">
-        <h3>Завдання 1</h3>
-        <p>
-            Продемонструвати блочну область видимості змінної result
-            у функції calculate().
-        </p>
-        <button onclick="task7()">Виконати</button>
-    </div>
+<div class="task">
+    <h3>Завдання 3</h3>
+    <p>
+        Ввести ім'я та два числа і вивести їх суму в консоль.
+    </p>
+    <button id="task9Button">Виконати</button>
+</div>
 
-    <div class="task">
-        <h3>Завдання 2</h3>
-        <p>
-            Вгадати секретне число, яке визначається як залишок від
-            ділення номера у журналі на 10.
-        </p>
-        <button onclick="task8()">Виконати</button>
-    </div>
+<div id="output">Результати виконання з'являться тут.</div>
 
-    <div class="task">
-        <h3>Завдання 3</h3>
-        <p>
-            Ввести ім'я та два числа і вивести їх суму в консоль.
-        </p>
-        <button onclick="task9()">Виконати</button>
-    </div>
-
-    <div id="output">Результати виконання з'являться тут.</div>
-
-    <script src="script.js"></script>
+<script type="module" src="./script.js"></script>
+```
 
 </body>
 </html>
+
 
