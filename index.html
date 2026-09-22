@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторна робота №2 — JavaScript</title>
 
-
 <style>
     * {
         box-sizing: border-box;
@@ -22,17 +21,12 @@
     header {
         background: #222;
         color: white;
-        padding: 35px 20px;
         text-align: center;
+        padding: 35px 20px;
     }
 
     header h1 {
         margin: 0 0 10px;
-    }
-
-    header p {
-        margin: 0;
-        color: #ccc;
     }
 
     main {
@@ -41,18 +35,11 @@
         padding: 0 20px;
     }
 
-    .info {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 25px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
+    .info,
     .task {
         background: white;
         padding: 20px;
-        margin-bottom: 18px;
+        margin-bottom: 20px;
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
@@ -107,7 +94,7 @@
 
 <main>
 
-```
+
 <div class="info">
     <p><strong>Студент:</strong> Шкляр Захарій Іванович</p>
     <p><strong>Група:</strong> ПІ-23-03</p>
@@ -118,19 +105,19 @@
 
 <div class="task">
     <h2>Завдання 1</h2>
-    <p>Введення імені та виведення привітання.</p>
+    <p>Створити змінну userName через prompt та вивести повідомлення.</p>
     <button id="button1">Виконати</button>
 </div>
 
 <div class="task">
     <h2>Завдання 2</h2>
-    <p>Визначення року народження за віком.</p>
+    <p>Визначити рік народження за введеним віком.</p>
     <button id="button2">Виконати</button>
 </div>
 
 <div class="task">
     <h2>Завдання 3</h2>
-    <p>Формування повного імені двома способами.</p>
+    <p>Ввести ім'я та прізвище і сформувати повне ім'я.</p>
     <button id="button3">Виконати</button>
 </div>
 
@@ -138,19 +125,19 @@
 
 <div class="task">
     <h2>Завдання 1</h2>
-    <p>Демонстрація блочної області видимості змінних.</p>
+    <p>Продемонструвати область видимості змінної.</p>
     <button id="button4">Виконати</button>
 </div>
 
 <div class="task">
     <h2>Завдання 2</h2>
-    <p>Використання функції confirm.</p>
+    <p>Продемонструвати роботу функції confirm.</p>
     <button id="button5">Виконати</button>
 </div>
 
 <div class="task">
     <h2>Завдання 3</h2>
-    <p>Перевірка числа на парність.</p>
+    <p>Перевірити число на парність.</p>
     <button id="button6">Виконати</button>
 </div>
 
@@ -158,26 +145,26 @@
 
 <div class="task">
     <h2>Завдання 1</h2>
-    <p>Демонстрація блочної області видимості змінної result.</p>
+    <p>Продемонструвати блочну область видимості змінної.</p>
     <button id="button7">Виконати</button>
 </div>
 
 <div class="task">
     <h2>Завдання 2</h2>
-    <p>Вгадування секретного числа.</p>
+    <p>Вгадати секретне число.</p>
     <button id="button8">Виконати</button>
 </div>
 
 <div class="task">
     <h2>Завдання 3</h2>
-    <p>Обчислення суми двох чисел.</p>
+    <p>Обчислити суму двох чисел.</p>
     <button id="button9">Виконати</button>
 </div>
 
 <div id="output">
     Результати виконання з'являться тут.
 </div>
-```
+
 
 </main>
 
@@ -185,7 +172,190 @@
     Шкляр З. І. — ПІ-23-03
 </footer>
 
-<script src="./script.js"></script>
+<script>
+
+function showResult(text) {
+    document.getElementById("output").textContent = text;
+}
+
+function task1() {
+    var userName = prompt("Введіть ваше ім'я:");
+
+    if (userName !== null) {
+        var message = "Hello, " + userName + "! Welcome to JavaScript";
+        alert(message);
+        showResult(message);
+    }
+}
+
+function task2() {
+    var age = Number(prompt("Введіть ваш вік:"));
+
+    if (isNaN(age) || age < 0) {
+        alert("Введено некоректний вік.");
+        showResult("Введено некоректний вік.");
+        return;
+    }
+
+    var currentYear = new Date().getFullYear();
+    var birthYear = currentYear - age;
+
+    var message = "Ваш приблизний рік народження: " + birthYear;
+
+    alert(message);
+    showResult(message);
+}
+
+function task3() {
+    var firstName = prompt("Введіть ім'я:");
+    var lastName = prompt("Введіть прізвище:");
+
+    if (firstName === null || lastName === null) {
+        return;
+    }
+
+    var result = "Your full name is " + firstName + " " + lastName;
+
+    console.log(result);
+    showResult(result);
+}
+
+function task4() {
+    var userName = "Захарій";
+
+    if (true) {
+        var enteredName = prompt("Введіть інше ім'я:");
+
+        console.log("Ім'я всередині блоку:", enteredName);
+        console.log("Глобальне ім'я:", userName);
+
+        showResult(
+            "Ім'я всередині блоку: " + enteredName +
+            "\nГлобальне ім'я: " + userName
+        );
+    }
+}
+
+function task5() {
+    var name = prompt("Введіть ваше ім'я:");
+    var age = Number(prompt("Введіть ваш вік:"));
+
+    if (name === null) {
+        return;
+    }
+
+    var answer = confirm(
+        "Hello, " + name + "! Your age is " + age + ". Continue?"
+    );
+
+    if (answer) {
+        alert("Welcome!");
+        showResult("Welcome!");
+    } else {
+        alert("Goodbye!");
+        showResult("Goodbye!");
+    }
+}
+
+function task6() {
+    var number = Number(prompt("Введіть число:"));
+
+    if (isNaN(number)) {
+        alert("Введено некоректне число.");
+        showResult("Введено некоректне число.");
+        return;
+    }
+
+    if (number % 2 === 0) {
+        alert("Number is even");
+        showResult("Number is even");
+    } else {
+        alert("Number is odd");
+        showResult("Number is odd");
+    }
+}
+
+function task7() {
+    function calculate() {
+        var result = 10;
+
+        if (true) {
+            var innerResult = 20;
+
+            console.log("Результат всередині блоку:", innerResult);
+            console.log("Результат поза блоком:", result);
+
+            showResult(
+                "Результат всередині блоку: " + innerResult +
+                "\nРезультат поза блоком: " + result
+            );
+        }
+    }
+
+    calculate();
+}
+
+function task8() {
+    var secretNumber = 11 % 10;
+
+    var enteredNumber = Number(
+        prompt("Введіть число від 0 до 9:")
+    );
+
+    if (isNaN(enteredNumber)) {
+        alert("Введено некоректне число.");
+        showResult("Введено некоректне число.");
+        return;
+    }
+
+    if (enteredNumber === secretNumber) {
+        alert("Correct!");
+        showResult("Correct! Правильне число: " + secretNumber);
+    } else {
+        alert("Wrong!");
+        showResult("Wrong! Правильне число: " + secretNumber);
+    }
+}
+
+function task9() {
+    var studentName = prompt("Введіть ваше ім'я:");
+    var firstNumber = Number(prompt("Введіть перше число:"));
+    var secondNumber = Number(prompt("Введіть друге число:"));
+
+    if (studentName === null) {
+        return;
+    }
+
+    if (isNaN(firstNumber) || isNaN(secondNumber)) {
+        alert("Введено некоректні числа.");
+        showResult("Введено некоректні числа.");
+        return;
+    }
+
+    var sum = firstNumber + secondNumber;
+
+    var result =
+        "Hello, " + studentName +
+        "! The sum of " + firstNumber +
+        " and " + secondNumber +
+        " is " + sum;
+
+    console.log(result);
+    showResult(result);
+}
+
+document.getElementById("button1").addEventListener("click", task1);
+document.getElementById("button2").addEventListener("click", task2);
+document.getElementById("button3").addEventListener("click", task3);
+document.getElementById("button4").addEventListener("click", task4);
+document.getElementById("button5").addEventListener("click", task5);
+document.getElementById("button6").addEventListener("click", task6);
+document.getElementById("button7").addEventListener("click", task7);
+document.getElementById("button8").addEventListener("click", task8);
+document.getElementById("button9").addEventListener("click", task9);
+
+</script>
 
 </body>
 </html>
+
