@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2 — JavaScript</title>
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        color: #222;
+    }
+
+    header {
+        background: #222;
+        color: white;
+        padding: 35px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0 0 10px;
+    }
+
+    header p {
+        margin: 0;
+        color: #ccc;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    .info {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .task {
+        background: white;
+        padding: 20px;
+        margin-bottom: 18px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .task h2 {
+        margin-top: 0;
+    }
+
+    button {
+        padding: 11px 20px;
+        border: none;
+        border-radius: 6px;
+        background: #333;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #555;
+    }
+
+    #output {
+        margin-top: 30px;
+        padding: 20px;
+        min-height: 120px;
+        background: #111;
+        color: #00ff88;
+        border-radius: 10px;
+        white-space: pre-line;
+        font-family: Consolas, monospace;
+    }
+
+    footer {
+        margin-top: 40px;
+        padding: 25px;
+        text-align: center;
+        background: #222;
+        color: #ccc;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <h1>Лабораторна робота №2</h1>
+    <p>Змінні та оператори в JavaScript</p>
+</header>
+
+<main>
+
+```
+<div class="info">
+    <p><strong>Студент:</strong> Шкляр Захарій Іванович</p>
+    <p><strong>Група:</strong> ПІ-23-03</p>
+    <p><strong>Номер у журналі:</strong> 11</p>
+</div>
+
+<h2>Рівень 4–6 балів</h2>
+
+<div class="task">
+    <h2>Завдання 1</h2>
+    <p>Введення імені та виведення привітання.</p>
+    <button id="button1">Виконати</button>
+</div>
+
+<div class="task">
+    <h2>Завдання 2</h2>
+    <p>Визначення року народження за віком.</p>
+    <button id="button2">Виконати</button>
+</div>
+
+<div class="task">
+    <h2>Завдання 3</h2>
+    <p>Формування повного імені двома способами.</p>
+    <button id="button3">Виконати</button>
+</div>
+
+<h2>Рівень 7–9 балів</h2>
+
+<div class="task">
+    <h2>Завдання 1</h2>
+    <p>Демонстрація блочної області видимості змінних.</p>
+    <button id="button4">Виконати</button>
+</div>
+
+<div class="task">
+    <h2>Завдання 2</h2>
+    <p>Використання функції confirm.</p>
+    <button id="button5">Виконати</button>
+</div>
+
+<div class="task">
+    <h2>Завдання 3</h2>
+    <p>Перевірка числа на парність.</p>
+    <button id="button6">Виконати</button>
+</div>
+
+<h2>Рівень 10–12 балів</h2>
+
+<div class="task">
+    <h2>Завдання 1</h2>
+    <p>Демонстрація блочної області видимості змінної result.</p>
+    <button id="button7">Виконати</button>
+</div>
+
+<div class="task">
+    <h2>Завдання 2</h2>
+    <p>Вгадування секретного числа.</p>
+    <button id="button8">Виконати</button>
+</div>
+
+<div class="task">
+    <h2>Завдання 3</h2>
+    <p>Обчислення суми двох чисел.</p>
+    <button id="button9">Виконати</button>
+</div>
+
+<div id="output">
+    Результати виконання з'являться тут.
+</div>
+```
+
+</main>
+
+<footer>
+    Шкляр З. І. — ПІ-23-03
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
